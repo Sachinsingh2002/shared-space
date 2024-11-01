@@ -126,8 +126,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '@/components/ui/Button'; // Ensure this path is correct
-import { Input } from '@/components/ui/Input'; // Ensure this path is correct
+import { Button } from '../ui/Button'; // Ensure this path is correct
+import { Input } from '../ui/Input';// Ensure this path is correct
 import Link from 'next/link'; // Importing Link for navigation
 import { auth } from '@/firebaseConfig'; // Import the auth instance
 import { createUserWithEmailAndPassword } from 'firebase/auth'; // Import the create user method
