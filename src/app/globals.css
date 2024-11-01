@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 0 0 0;
+    --card: 255 255 255;
+    --card-foreground: 0 0 0;
+    --popover: 255 255 255;
+    --popover-foreground: 0 0 0;
+    --primary: 0 0 0;
+    --primary-foreground: 255 255 255;
+    --secondary: 240 240 240;
+    --secondary-foreground: 0 0 0;
+    --muted: 240 240 240;
+    --muted-foreground: 0 0 0;
+    --accent: 240 240 240;
+    --accent-foreground: 0 0 0;
+    --destructive: 255 0 0;
+    --destructive-foreground: 255 255 255;
+    --border: 220 220 220;
+    --input: 220 220 220;
+    --ring: 0 0 0;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0 0;
+    --foreground: 255 255 255;
+    --card: 0 0 0;
+    --card-foreground: 255 255 255;
+    --popover: 0 0 0;
+    --popover-foreground: 255 255 255;
+    --primary: 255 255 255;
+    --primary-foreground: 0 0 0;
+    --secondary: 40 40 40;
+    --secondary-foreground: 255 255 255;
+    --muted: 40 40 40;
+    --muted-foreground: 255 255 255;
+    --accent: 40 40 40;
+    --accent-foreground: 255 255 255;
+    --destructive: 200 0 0;
+    --destructive-foreground: 255 255 255;
+    --border: 40 40 40;
+    --input: 40 40 40;
+    --ring: 255 255 255;
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    font-family: system-ui, sans-serif;
+  }
+  .bg-background {
+    background-color: rgb(var(--background));
+  }
+  .text-foreground {
+    color: rgb(var(--foreground));
+  }
+  .border-border {
+    border-color: rgb(var(--border));
+  }
+  .ring-ring {
+    box-shadow: 0 0 0 2px rgb(var(--ring));
+  }
+}
