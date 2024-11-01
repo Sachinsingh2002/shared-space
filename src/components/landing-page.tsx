@@ -159,8 +159,9 @@ import { motion } from 'framer-motion';
 import { Sun, Moon, LogIn, UserPlus, MapPin, Users, IndianRupee } from 'lucide-react';
 import { useRouter } from 'next/navigation'; // Importing the useRouter hook
 import Link from 'next/link'; // Importing Link component for navigation
-import { Button } from '../ui/Button';
-import { Badge } from '../ui/Input';
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+
 
 export function LandingPageComponent() {
   const [isDarkMode, setIsDarkMode] = useState(false);
