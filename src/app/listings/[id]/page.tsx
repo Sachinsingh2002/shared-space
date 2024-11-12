@@ -162,7 +162,7 @@ export default function ListingDetailsPage({ params }: { params: { id: string } 
 
           {/* Tags */}
           <div className="flex space-x-2 mb-4">
-            {listing.tags?.map((tag, index) => (
+            {listing.tags?.map((tag: string, index: number) => (
               <span key={index} className="bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full px-4 py-2">
                 {tag}
               </span>
@@ -173,7 +173,7 @@ export default function ListingDetailsPage({ params }: { params: { id: string } 
           <div className="mb-4">
             <strong>Facilities:</strong>
             <ul className="list-disc list-inside">
-              {listing.facilities?.map((facility, index) => (
+              {listing.facilities?.map((facility: string, index: number) => (
                 <li key={index}>{facility}</li>
               ))}
             </ul>
