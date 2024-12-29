@@ -198,7 +198,6 @@ export default function ListingDetailsPage({ params }: { params: { id: string } 
               <Button asChild>
                 <Link href="/">Back to Listings</Link>
               </Button>
-              <Button onClick={() => handlePayment(listing.id)}>Payment</Button>
             </div>
             <Button onClick={handleShare}>Share</Button>
           </div>
