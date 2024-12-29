@@ -194,9 +194,12 @@ export default function ListingDetailsPage({ params }: { params: { id: string } 
 
           {/* Share and Back to Listings buttons */}
           <div className="flex justify-between mb-4">
-            <Button asChild>
-              <Link href="/">Back to Listings</Link>
-            </Button>
+            <div className="flex space-x-2">
+              <Button asChild>
+                <Link href="/">Back to Listings</Link>
+              </Button>
+              <Button onClick={() => handlePayment(listing.id)}>Payment</Button>
+            </div>
             <Button onClick={handleShare}>Share</Button>
           </div>
         </div>
