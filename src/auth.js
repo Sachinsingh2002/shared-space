@@ -1,14 +1,20 @@
-// src/auth.js
+// Firebase configuration and initialization
+import { initializeApp } from 'firebase/app'
+import { getAuth } from 'firebase/auth'
 
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from './firebaseConfig';
+const firebaseConfig = {
+  // Add your Firebase config here
+  apiKey: "your-api-key",
+  authDomain: "your-auth-domain",
+  projectId: "your-project-id",
+  storageBucket: "your-storage-bucket",
+  messagingSenderId: "your-messaging-sender-id",
+  appId: "your-app-id"
+}
 
-export const signUpWithEmailPassword = async (email, password) => {
-  try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    return userCredential.user;
-  } catch (error) {
-    console.error('Error signing up: ', error);
-    throw error;
-  }
-};
+// Initialize Firebase
+const app = initializeApp(firebaseConfig)
+
+// Initialize Firebase Authentication and get a reference to the service
+export const auth = getAuth(app)
+export default app
