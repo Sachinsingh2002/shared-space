@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 0 0 0;
+    --card: 255 255 255;
+    --card-foreground: 0 0 0;
+    --popover: 255 255 255;
+    --popover-foreground: 0 0 0;
+    --primary: 0 0 0;
+    --primary-foreground: 255 255 255;
+    --secondary: 240 240 240;
+    --secondary-foreground: 0 0 0;
+    --muted: 240 240 240;
+    --muted-foreground: 0 0 0;
+    --accent: 240 240 240;
+    --accent-foreground: 0 0 0;
+    --destructive: 255 0 0;
+    --destructive-foreground: 255 255 255;
+    --border: 220 220 220;
+    --input: 220 220 220;
+    --ring: 0 0 0;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0 0;
+    --foreground: 255 255 255;
+    --card: 0 0 0;
+    --card-foreground: 255 255 255;
+    --popover: 0 0 0;
+    --popover-foreground: 255 255 255;
+    --primary: 255 255 255;
+    --primary-foreground: 0 0 0;
+    --secondary: 40 40 40;
+    --secondary-foreground: 255 255 255;
+    --muted: 40 40 40;
+    --muted-foreground: 255 255 255;
+    --accent: 40 40 40;
+    --accent-foreground: 255 255 255;
+    --destructive: 200 0 0;
+    --destructive-foreground: 255 255 255;
+    --border: 40 40 40;
+    --input: 40 40 40;
+    --ring: 255 255 255;
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    font-family: system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  .bg-background {
+    background-color: rgb(var(--background));
+  }
+  
+  .text-foreground {
+    color: rgb(var(--foreground));
+  }
+  
+  .border-border {
+    border-color: rgb(var(--border));
+  }
+  
+  .ring-ring {
+    box-shadow: 0 0 0 2px rgb(var(--ring));
+  }
+}
+
+@layer utilities {
+  .toggle-checkbox {
+    appearance: none;
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: #e5e7eb;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-checkbox:checked {
+    background-color: #3b82f6;
+  }
+  
+  .toggle-checkbox::after {
+    content: '';
+    position: absolute;
+    top: 0.125rem;
+    left: 0.125rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle-checkbox:checked::after {
+    transform: translateX(1.5rem);
+  }
+  
+  /* Custom scrollbar */
+  /* Minimal clean scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f8fafc;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
+  }
+
+  /* Dark mode scrollbars */
+  .dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+  }
+
+  /* Dark mode body background */
+  .dark {
+    background-color: #111827;
+    color: #f9fafb;
+  }
+
+  /* Simple smooth transitions */
+  * {
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  /* Clean button interactions */
+  button {
+    transition: all 0.2s ease;
+  }
+
+  /* Simple focus states */
+  button:focus-visible, 
+  input:focus-visible, 
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid #374151;
+    outline-offset: 2px;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
